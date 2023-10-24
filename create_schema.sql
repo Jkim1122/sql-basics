@@ -7,3 +7,25 @@ CREATE TABLE students (
   birthdate    date NOT NULL,
   address_id   integer
 );
+DROP TABLE IF EXISTS addresses;
+CREATE TABLE addresses (
+  id          serial PRIMARY KEY,
+  line_1      varchar(225) NOT NULL,
+  city        varchar(25) NOT NULL,
+  state       varchar(25) NOT NULL,
+  zipcode     INT
+
+);
+DROP TABLE IF EXISTS classes;
+CREATE TABLE classes (
+  id          serial PRIMARY KEY,
+  name        varchar(225) NOT NULL,
+  credits     INT
+);
+DROP TABLE IF EXISTS enrollments;
+CREATE TABLE enrollments (
+  id          serial PRIMARY KEY,
+  student_id  INT,
+  class_id    INT,
+  grade       char(1)
+);
